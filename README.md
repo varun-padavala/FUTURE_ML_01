@@ -1,84 +1,217 @@
-# 🚀 AI-Powered Sales Forecasting Dashboard
+````markdown
+# Sales & Demand Forecasting for Businesses
 
-## 📌 Overview
-This project builds a sales forecasting system using historical retail data to predict future demand and support business decision-making.
+Machine Learning Task 1 for Future Interns (2026)
 
-The system uses time-series modeling (Facebook Prophet) and presents results through a Power BI dashboard.
+## 📌 Project Overview
 
----
+Businesses need accurate sales forecasts to make informed decisions about inventory, staffing, and cash flow. This project uses historical sales data from the Superstore dataset to predict future sales trends using Facebook Prophet.
 
-## 🎯 Objectives
-- Forecast future sales trends
-- Identify seasonal patterns
-- Support inventory and staffing decisions
+The forecast results are visualized in an interactive Power BI dashboard that highlights actual vs forecasted sales, confidence intervals, and key metrics.
 
 ---
 
-## 🛠 Tech Stack
-- Python (Pandas, Prophet, Matplotlib, NumPy, Scikit-learn)
+## 🎯 Objective
+
+Build a machine learning model that forecasts future sales trends and provides actionable business insights through visual analytics.
+
+---
+
+## 🛠️ Tools & Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Prophet
+- Scikit-learn
+- Matplotlib
 - Power BI
-- Superstore Dataset
+- VS Code
 
 ---
 
-## ⚙️ Approach
+## 📂 Dataset
 
-### 1. Data Preparation
-- Cleaned dataset
-- Converted date column
-- Aggregated monthly sales
+**Sample - Superstore Dataset**
 
-### 2. Modeling
-- Applied Prophet for time-series forecasting
-- Captured trend + seasonality
+The dataset contains:
+- Order Date
+- Sales
+- Profit
+- Quantity
+- Category
+- Customer Segment
+- Region
 
-### 3. Forecasting
-- Predicted next 12 months
-- Generated confidence intervals
+---
+
+## 🔍 Project Workflow
+
+### 1. Data Preprocessing
+- Converted `Order Date` to datetime format
+- Aggregated sales data by month
+- Renamed columns to Prophet format:
+  - `ds` → Date
+  - `y` → Sales
+
+### 2. Forecasting Model
+- Trained a Prophet model with yearly seasonality
+- Forecasted the next 12 months
+- Generated:
+  - `yhat` (predicted sales)
+  - `yhat_lower`
+  - `yhat_upper`
+
+### 3. Model Evaluation
+Evaluated forecast performance using:
+- MAE (Mean Absolute Error)
+- RMSE (Root Mean Squared Error)
+- MAPE (Mean Absolute Percentage Error)
 
 ### 4. Visualization
-- Created forecast plots
-- Built Power BI dashboard
-
----
-
-## 📊 Results
-
-- Model successfully captured sales trend and seasonal patterns
-- Forecast shows continued business growth
-- Confidence intervals provide uncertainty estimation
-
----
-
-## 📈 Model Performance
-
-- MAE: 5665.18  
-- RMSE: 7260.16  
-- MAPE: ~13%
-
----
-
-## 💡 Business Insights
-
-- Sales show a consistent upward trend over time
-- Strong seasonal patterns observed in monthly demand
-- Peak months indicate higher customer activity
-- Forecast helps optimize inventory and staffing
+Created:
+- Forecast plot with confidence interval
+- Trend and seasonality component plots
+- Power BI dashboard with interactive slicers and KPI cards
 
 ---
 
 ## 📊 Dashboard Features
 
-- Sales Forecast vs Actual
-- KPI Cards (Total Sales, Avg Sales)
-- Filters (Region, Category)
-- Trend Analysis
+The Power BI dashboard includes:
+
+- Actual vs Forecast Comparison
+- Monthly Sales Forecast
+- Confidence Interval Visualization
+- Total Forecast Sales
+- Average Monthly Forecast
+- Minimum Forecast Value
+- Interactive Date Filter
 
 ---
 
-## 🚀 How to Run
+## 📈 Key Results
 
-```bash
-cd code
-python prophet_model.py
-python evaluation.py
+- Total Forecast Sales: **1.74M**
+- Average Monthly Forecast: **56.18K**
+- Minimum Forecast Value: **14.90K**
+
+---
+
+## 🖼️ Dashboard Preview
+
+![Dashboard Preview](dashboard/dashboard_preview.png)
+
+---
+
+## 📉 Forecast Visualizations
+
+### Forecast Plot
+![Forecast Plot](visuals/forecast_plot.png)
+
+### Components Plot
+![Components Plot](visuals/components_plot.png)
+
+---
+
+## 📁 Project Structure
+
+FUTURE_ML_01/
+│
+├── code/
+│   ├── data_preprocessing.py
+│   ├── prophet_model.py
+│   ├── evaluation.py
+│   └── requirements.txt
+│
+├── data/
+│   ├── Sample - Superstore.csv
+│   └── forecast_results.csv
+│
+├── dashboard/
+│   ├── Task1_Dashboard.pbix
+│   └── dashboard_preview.png
+│
+├── visuals/
+│   ├── forecast_plot.png
+│   └── components_plot.png
+│
+└── README.md
+
+---
+
+## 💡 Business Insights
+
+The forecasting model helps businesses plan proactively.
+
+### If forecasted sales increase:
+- Increase inventory levels
+- Schedule more staff
+- Prepare for higher cash requirements
+
+### If forecasted sales decrease:
+- Reduce stock orders
+- Optimize operational costs
+- Avoid overproduction
+
+This system enables businesses to make informed decisions rather than reacting to demand changes after they occur.
+
+---
+
+## 🚀 How to Run the Project
+
+1. Install required libraries:
+   ```bash
+   pip install -r code/requirements.txt
+````
+
+2. Run data preprocessing:
+
+   ```bash
+   python code/data_preprocessing.py
+   ```
+
+3. Train the forecasting model:
+
+   ```bash
+   python code/prophet_model.py
+   ```
+
+4. Evaluate the model:
+
+   ```bash
+   python code/evaluation.py
+   ```
+
+5. Open the Power BI dashboard:
+
+   ```text
+   dashboard/Task1_Dashboard.pbix
+   ```
+
+---
+
+## 📌 GitHub Repository
+
+[https://github.com/varun-padavala/FUTURE_ML_01](https://github.com/varun-padavala/FUTURE_ML_01)
+
+---
+
+## 🙌 Acknowledgements
+
+* Future Interns
+* Facebook Prophet
+* Microsoft Power BI
+* Kaggle
+
+---
+
+## 📬 Contact
+
+**Varun Padavala**
+
+GitHub: [https://github.com/varun-padavala](https://github.com/varun-padavala)
+LinkedIn: [https://www.linkedin.com/](https://www.linkedin.com/)
+
+```
+```
